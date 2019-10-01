@@ -170,6 +170,10 @@ def ProcessXMLfileCSVRaw():
                         cc=str(C3)
                         s0,s1 = cc.split("}")
                         s0,S1 = s1.split("'")
+                        #
+                        ## - Check if we've found the VPG name if so replcae the "Name" VPG field with a   
+                        ## - "VPG-Name" field to make identifictaion of the VPG name in the CSV file easier
+                        #
                         if s0 == "Name":
                             s0 = "VPG-Name"
                         VPGdata=(s0,C3.text)
@@ -331,6 +335,10 @@ def ProcessXMLfile():
                         VPGdata=("VPGN"+str(VPGcount),str(s0),str(C3.text))
                         VWF.write(str(VPGdata))
                         VWF.write("\n")
+                        #
+                        ## - Check if we've found the VPG name if so add a new VPG Field into the temp file
+                        ## - which will be used to identify the VPG number and label them in the CSV file
+                        #
                         if s0 == "Name":
                             VPGdata = ("VPGN"+str(VPGcount),"VPG-Name=", str(C3.text))
                             VWF.write(str(VPGdata))
