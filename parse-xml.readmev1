@@ -2,7 +2,7 @@ This is for parse-xml.py V0.0.005:
 
 The purpose of this python script is to format the data that is stored in the VPG XML export file.
 
-I've updated this version of the script to be full self contained and not requiring the xml_elements_long.py file any longer.
+I've updated this version of the script to be fully self contained and not requiring the xml_elements_long.py file any longer.
 
 I've added an option to pull the VPG data into a raw CSV file format vs the formatted CSV which includes the VPG Name in the CSV file, I've
 also included a help option and a file verification to validate that it's an xml file being passed to the script.
