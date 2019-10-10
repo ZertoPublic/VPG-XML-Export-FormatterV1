@@ -78,6 +78,8 @@ def ProcessPARAMETERS():
     parmlen = len(sys.argv)
     if parmlen >= 2:
        infile = sys.argv[1]
+       if "help" in infile:
+           ShowSyntax()
        #
        ## - process the third paramarter passed
        #
@@ -475,7 +477,9 @@ ProcessPARAMETERS()
 if RawOrCSV == "CSV":
     ProcessXMLfile()
     ProcessXMLfileCSV()
-    print (Script_Name + " Version:" + Script_Version + " CSV filename", CSVFileName, "Created")
 else:
     ProcessXMLfileCSVRaw()
-    print (Script_Name + " Version:" + Script_Version + " CSV filename", CSVFileName, "Created")
+#
+## -- Prinout out the number of VPG's processed and the CSV file name
+#
+print (Script_Name + " Version:" + Script_Version + " CSV filename", CSVFileName, "Created")
